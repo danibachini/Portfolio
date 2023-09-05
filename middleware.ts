@@ -3,7 +3,7 @@ import { match } from '@formatjs/intl-localematcher';
 
 var Negotiator = require('negotiator');
 let locales = ['fr', 'en'];
-export let defaultLocale = 'en';
+export let defaultLocale = 'fr';
 
 function getLocale(request: Request): string {
   const headers = new Headers(request.headers)
@@ -24,14 +24,9 @@ export function middleware(request: NextRequest) {
 
   return NextResponse.rewrite(newUrl)
 }
-
+ 
 export const config = {
-  matcher: [
-    // Skip all internal paths (_next)
-    '/((?!_next).*)',
-    // '/((?!_next|api|favicon.ico).*)',
-    // Optional: only run on root (/) URL
-    // '/'
-  ],
-}
-
+  // Skip all paths that should not be internationalized. This example skips the
+  // folders "api", "_next" and all files with an extension (e.g. favicon.ico)
+  matcher: ['/((?!api|_next|.*\\..*).*)']
+};
