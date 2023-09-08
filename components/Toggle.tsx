@@ -1,0 +1,66 @@
+
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+
+export default function Toggle() {
+    const pathname = usePathname();
+    const [navbar, setNavbar] = useState(false);
+    useEffect(()=>{
+        setNavbar(false)
+    },[pathname])
+
+    return (
+        <>
+            <div className='flex'>
+                <button className="p-2 mx-auto my-6" onClick={() => setNavbar(!navbar)}>
+                    {/* Toggle icon from heroicons.com */}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                    </svg>
+                </button> 
+            </div>
+
+            {navbar && 
+                <div className="px-6 h-20 shadow-sm">
+
+                     {/* Navbar links */}
+                     <div>
+                        <ul className="flex flex-wrap gap-4 justify-center text-sm">
+                            <li>
+                                <Link onClick={() => setNavbar(!navbar)} 
+                                className='m-2' 
+                                href="/">PROJECTS</Link>
+                            </li>
+
+                            <li>
+                                <Link onClick={() => setNavbar(!navbar)} 
+                                className='m-2' 
+                                href="/">SKILLS</Link>
+                            </li>
+                            
+                            <li>
+                                <Link onClick={() => setNavbar(!navbar)} 
+                                className='m-2' 
+                                href="/">DANIELLE</Link>
+                            </li>
+
+                            <li>
+                                <Link onClick={() => setNavbar(!navbar)} 
+                                className='m-2' 
+                                href="/">HISTORY</Link>
+                            </li>
+                            
+                            <li>
+                                <Link onClick={() => setNavbar(!navbar)} 
+                                className='m-2' 
+                                href="/">CONTACT</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            }
+        </>
+    )
+}

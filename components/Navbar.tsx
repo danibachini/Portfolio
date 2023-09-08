@@ -1,29 +1,44 @@
+'use client';
+
 import Link from "next/link"
+import { usePathname } from 'next/navigation';
+import Toggle from "./Toggle";
 
 export default function Navbar() {
+    const currentRoute = usePathname();
+    
     return (
-        <div className="md:block hidden my-10">
-            <div className="md:flex justify-center ">
-                <div className="flex-1 md:max-w-xl">
-                    <ul className="h-screen md:h-auto items-center justify-around text-sm md:flex">
-                        <li className="hover:underline">
-                            <Link href="/">PROJECTS</Link> 
-                        </li>
-                        <li className="hover:underline">
-                            <Link href="/">SKILLS</Link>
-                        </li>
-                        <li className="hover:underline">
-                            <Link href="/">DANIELLE</Link>
-                        </li>
-                        <li className="hover:underline">
-                            <Link href="/">HISTORY</Link>
-                        </li>
-                        <li className="hover:underline">
-                            <Link href="/">CONTACT</Link>
-                        </li>
-                    </ul>
+        <>
+            {/* Toggle button for mobile */}
+            <div className="md:hidden">
+                <Toggle/>
+            </div>
+
+            <div className="md:block hidden mt-28 mb-14">
+                <div className="md:flex justify-center ">
+                    <div className="flex-1 md:max-w-xl">
+                        <ul className="h-screen md:h-auto items-center justify-around text-sm md:flex">
+                            <li className="hover:underline hover:underline-offset-4 hover:decoration-1">
+                                <Link href="/" className={currentRoute === '/'
+                                ? 'underline underline-offset-4'
+                                : 'no-underline'}>PROJECTS</Link> 
+                            </li>
+                            <li className="hover:underline hover:underline-offset-4 hover:decoration-1">
+                                <Link href="/">SKILLS</Link>
+                            </li>
+                            <li className="hover:underline hover:underline-offset-4 hover:decoration-1">
+                                <Link href="/">DANIELLE</Link>
+                            </li>
+                            <li className="hover:underline hover:underline-offset-4 hover:decoration-1">
+                                <Link href="/">HISTORY</Link>
+                            </li>
+                            <li className="hover:underline hover:underline-offset-4 hover:decoration-1">
+                                <Link href="/">CONTACT</Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
