@@ -13,7 +13,7 @@ export default function Toggle() {
     return (
         <>
             <div className='flex'>
-                <button className="p-2 mx-auto my-6" onClick={() => setNavbar(!navbar)}>
+                <button className="p-2 mx-auto my-6"  onClick={() => setNavbar(!navbar)}>
                     {/* Toggle icon from heroicons.com */}
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
@@ -22,38 +22,40 @@ export default function Toggle() {
             </div>
 
             {navbar && 
-                <div className="px-6 h-20 shadow-sm">
+                <div className="px-6 h-24 shadow-sm mb-6">
 
                      {/* Navbar links */}
                      <div>
                         <ul className="flex flex-wrap gap-4 justify-center text-sm">
-                            <li>
+                            <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className='m-2' 
+                                className={pathname === '/'
+                                ? 'underline underline-offset-4'
+                                : 'no-underline'} 
                                 href="/">PROJECTS</Link>
                             </li>
 
-                            <li>
+                            <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className='m-2' 
+                                className=''
                                 href="/">SKILLS</Link>
                             </li>
                             
-                            <li>
+                            <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className='m-2' 
+                                className=''
                                 href="/">DANIELLE</Link>
                             </li>
 
-                            <li>
+                            <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className='m-2' 
+                                className=''
                                 href="/">HISTORY</Link>
                             </li>
                             
-                            <li>
+                            <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className='m-2' 
+                                className=''
                                 href="/">CONTACT</Link>
                             </li>
                         </ul>

@@ -36,10 +36,10 @@ export default function RootLayout({
               <h1 className='mx-2'>DANIELLE BACHINI.</h1>
               <div className='flex'>
                 <Link href="https://github.com/danibachini" target="_blank">
-                  <Image src="/github.png" alt="Github's icon" width="25" height="25" className="cursor-pointer mx-2 hover:scale-110 duration-300"  />
+                  <Image src="/github.png" alt="Github's icon" width="25" height="25" className="cursor-pointer mx-2 hover:scale-110 duration-300"/>
                 </Link>
                 <Link href="https://www.linkedin.com/in/danibachini/" target="_blank">
-                  <Image src="/linkedin.png" alt="Linkedin's icon" width="25" height="25" className="cursor-pointer mx-2 hover:scale-110 duration-300"  />
+                  <Image src="/linkedin.png" alt="Linkedin's icon" width="25" height="25" className="cursor-pointer mx-2 hover:scale-110 duration-300"/>
                 </Link>
               </div>
             </div>
@@ -53,10 +53,8 @@ export default function RootLayout({
 
           <Navbar/>
 
-          <div className="flex  min-h-screen md:max-w-5xl mx-auto px-6 fill">
-            <div className="container flex-1 mx-2 my-6">
-              {children}
-            </div>
+          <div className='min-h-screen md:max-w-5xl mx-auto px-6'>
+            {children}
           </div>
 
         </body>
