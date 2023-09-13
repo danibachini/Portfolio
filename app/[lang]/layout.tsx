@@ -53,7 +53,8 @@ export default function RootLayout({
 
           <Navbar/>
 
-          <div className='min-h-screen md:max-w-5xl mx-auto px-6'>
+          <div className='min-h-screen md:max-w-5xl mx-auto px-6 '>
+          {/* <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center'> */}
             {children}
           </div>
 
