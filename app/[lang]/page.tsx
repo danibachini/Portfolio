@@ -1,10 +1,13 @@
 
-import { dictionary } from '@/content';
+// import { dictionary } from '@/content';
 import { MongoClient, ObjectId } from 'mongodb';
 
 interface Project {
   _id: ObjectId;
   image: string;
+  title: string;
+  title_fr: string;
+  video: string;
 }
 
 async function getData() {
@@ -13,36 +16,31 @@ async function getData() {
   const client: MongoClient = new MongoClient(driver);
 
   try {
-      await client.connect();
+    await client.connect();
+    const projects = await client
+      .db('PortfolioDb')
+      .collection<Project>('Projects')
+      .find({}, {projection: {
+        _id: false
+      }})
+      .toArray();
 
-      const projects = await client
-        .db('PortfolioDb')
-        .collection<Project>('Projects')
-        // .find({},{})
-        .find({}, {projection: {
-          _id: false
-        }})
-        .toArray();
-
-      // console.log(projects);
-      
-      return projects
+    return projects
 
   } catch (error) {
-      return (error)
+    return (error)
 
   } finally {
-      client.close();
+    client.close();
   }
 }
 
-export default async function ({ params }: { params: { lang: string } }) {
+// export default async function ({ params }: { params: { lang: string } }) {
+export default async function () {
 
   const projectsList: Project[]  = await getData() as Project[];
-  
 
   return (
-    <>
       <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center'>
 
         {projectsList.map((project, index) => (
@@ -60,32 +58,6 @@ export default async function ({ params }: { params: { lang: string } }) {
           </a> 
         ))}
 
-        {/* <div className='h-64 bg-slate-400'>
-          <p>column 1</p>
-          <p>{dictionary[params.lang]?.homeContent}</p>
-          <p>{dictionary[params.lang]?.homeContent}</p>
-        </div>
-        <div className='h-64 bg-slate-400'>
-          <p>column 2</p>
-          <p>{dictionary[params.lang]?.homeContent}</p>
-          <p>{dictionary[params.lang]?.homeContent}</p>
-        </div>
-        <div className='h-64 bg-slate-400'>
-          <p>column 3</p>
-          <p>{dictionary[params.lang]?.homeContent}</p>
-          <p>{dictionary[params.lang]?.homeContent}</p>
-        </div>
-        <div className='h-64 bg-slate-400'>
-          <p>column 4</p>
-          <p>{dictionary[params.lang]?.homeContent}</p>
-          <p>{dictionary[params.lang]?.homeContent}</p>
-        </div>
-        <div className='h-64 bg-slate-400'>
-          <p>column 5</p>
-          <p>{dictionary[params.lang]?.homeContent}</p>
-          <p>{dictionary[params.lang]?.homeContent}</p>
-        </div> */}
       </main>
-    </>
   )
 }

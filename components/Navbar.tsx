@@ -24,7 +24,9 @@ export default function Navbar() {
                                 : 'no-underline'}>PROJECTS</Link> 
                             </li>
                             <li className="hover:underline hover:underline-offset-4 hover:decoration-1">
-                                <Link href="/">SKILLS</Link>
+                                <Link href="/skills" className={currentRoute === '/skills'
+                                ? 'underline underline-offset-4'
+                                : 'no-underline'}>SKILLS</Link>
                             </li>
                             <li className="hover:underline hover:underline-offset-4 hover:decoration-1">
                                 <Link href="/">DANIELLE</Link>
