@@ -36,12 +36,12 @@ export default function skills() {
                 <h1 className='text-center font-thin py-4'>Frontend</h1>
                 <div className='m-6 flex flex-wrap justify-center gap-10'>
                     {front.map((logo, index) => (
-                        <div className='tooltip' data-tip={logo.brand}>
+                        <div className='tooltip tooltip-primary' data-tip={logo.brand}>
                             <img 
                             key={index} 
                             src={logo.image} 
                             alt="list of logos" 
-                            className="h-16 cursor-pointer hover:scale-110 duration-300"
+                            className="h-16 hover:scale-110 duration-300"
                             />
                         </div>
                     ))}
@@ -52,12 +52,12 @@ export default function skills() {
                 <h1 className='text-center font-thin py-4'>Backend</h1>
                 <div className='m-6 flex flex-wrap justify-center gap-10'>
                     {back.map((logo, index) => (
-                        <div className='tooltip' data-tip={logo.brand}>
+                        <div className='tooltip tooltip-primary' data-tip={logo.brand}>
                             <img 
                             key={index} 
                             src={logo.image} 
                             alt="list of logos" 
-                            className="h-16 cursor-pointer hover:scale-110 duration-300"
+                            className="h-16 hover:scale-110 duration-300"
                             />
                         </div>
                     ))}
@@ -68,12 +68,12 @@ export default function skills() {
                 <h1 className='text-center font-thin py-4'>Database</h1>
                 <div className='m-6 flex flex-wrap justify-center gap-10'>
                     {database.map((logo, index) => (
-                        <div className='tooltip' data-tip={logo.brand}>
+                        <div className='tooltip tooltip-primary' data-tip={logo.brand}>
                             <img 
                             key={index} 
                             src={logo.image} 
                             alt="list of logos" 
-                            className="h-16 cursor-pointer hover:scale-110 duration-300"
+                            className="h-16 hover:scale-110 duration-300"
                             />
                         </div>
                     ))}
@@ -84,12 +84,12 @@ export default function skills() {
                 <h1 className='text-center font-thin py-4'>Versioning</h1>
                 <div className='m-6 flex flex-wrap justify-center gap-10'>
                     {version.map((logo, index) => (
-                        <div className='tooltip' data-tip={logo.brand}>
+                        <div className='tooltip tooltip-primary' data-tip={logo.brand}>
                             <img 
                             key={index} 
                             src={logo.image} 
                             alt="list of logos" 
-                            className="h-16 cursor-pointer hover:scale-110 duration-300"
+                            className="h-16 hover:scale-110 duration-300"
                             />
                         </div>
                     ))}

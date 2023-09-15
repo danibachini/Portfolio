@@ -51,8 +51,10 @@ export default function Toggle() {
 
                             <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className=''
-                                href="/">HISTORY</Link>
+                                className={pathname === '/history'
+                                ? 'underline underline-offset-4'
+                                : 'no-underline'}
+                                href="/history">HISTORY</Link>
                             </li>
                             
                             <li className="m-2">

@@ -19,17 +19,15 @@ const config: Config = {
     require('daisyui'),
   ],
   daisyui: {
-    extend: {
       themes: [
         {
           'mytheme': {
-            'primary': '#000000',
+            'primary': '#f3f3f3',
             'primary-focus': '#000000',
-            'primary-content': '#ffffff',
+            'primary-content': '#909090',
           },
         },
       ]
-    }
   },
 }
 export default config

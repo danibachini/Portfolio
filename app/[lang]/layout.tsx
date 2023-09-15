@@ -47,7 +47,7 @@ export default function RootLayout({
 
           <div className='bg-neutral-100 py-10 items-center'>
             <div className='md:max-w-5xl flex flex-col mx-auto px-6 fill'>
-              <p className='mx-2 text-lg'>{dictionary[params.lang]?.homeHeader}</p>
+              <h1 className='mx-2 text-lg'>{dictionary[params.lang]?.homeHeader}</h1>
             </div>
           </div> 
 

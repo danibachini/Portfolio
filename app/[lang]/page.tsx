@@ -1,5 +1,4 @@
 
-// import { dictionary } from '@/content';
 import { MongoClient, ObjectId } from 'mongodb';
 
 interface Project {
@@ -35,7 +34,6 @@ async function getData() {
   }
 }
 
-// export default async function ({ params }: { params: { lang: string } }) {
 export default async function () {
 
   const projectsList: Project[]  = await getData() as Project[];

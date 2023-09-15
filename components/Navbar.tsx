@@ -32,7 +32,9 @@ export default function Navbar() {
                                 <Link href="/">DANIELLE</Link>
                             </li>
                             <li className="hover:underline hover:underline-offset-4 hover:decoration-1">
-                                <Link href="/">HISTORY</Link>
+                                <Link href="/history" className={currentRoute === '/history'
+                                ? 'underline underline-offset-4'
+                                : 'no-underline'}>HISTORY</Link>
                             </li>
                             <li className="hover:underline hover:underline-offset-4 hover:decoration-1">
                                 <Link href="/">CONTACT</Link>
