@@ -5,6 +5,11 @@ interface DictionaryEntry {
   historyHeaderStudy: string;
   historyContentWork: history[];
   historyContentStudy: history[];
+  contactName: string;
+  contactEmail: string;
+  contactMessage: string;
+  contactButton: string;
+  contactEmailSent: string;
 }
 
 interface history {
@@ -91,8 +96,12 @@ export const dictionary: Record<string, DictionaryEntry> = {
         place: `UniFOA`, 
         dates: `07/2009 - 12/2012`
       },
-    ]
-  
+    ],
+    contactName: 'Name',
+    contactEmail: 'Email',
+    contactMessage: 'Message',
+    contactButton: 'Send',
+    contactEmailSent: 'Email Sent Successfully !',
   },
   fr: {
     homeHeader: `DÉVELOPPEUSE FULL-STACK`,
@@ -171,6 +180,11 @@ export const dictionary: Record<string, DictionaryEntry> = {
         place: `UniFOA`, 
         dates: `07/2009 - 12/2012`
       },
-    ]
+    ],
+    contactName: 'Nom',
+    contactEmail: 'Adresse E-mail',
+    contactMessage: 'Message',
+    contactButton: 'Envoyer',
+    contactEmailSent: 'E-mail Envoyé Avec Succès !',
   }
 }

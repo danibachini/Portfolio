@@ -45,8 +45,10 @@ export default function Toggle() {
                             
                             <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className=''
-                                href="/">DANIELLE</Link>
+                                className={pathname === '/me'
+                                ? 'underline underline-offset-4'
+                                : 'no-underline'}
+                                href="/me">DANIELLE</Link>
                             </li>
 
                             <li className="m-2">
@@ -59,8 +61,10 @@ export default function Toggle() {
                             
                             <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className=''
-                                href="/">CONTACT</Link>
+                                className={pathname === '/contact'
+                                ? 'underline underline-offset-4'
+                                : 'no-underline'}
+                                href="/contact">CONTACT</Link>
                             </li>
                         </ul>
                     </div>

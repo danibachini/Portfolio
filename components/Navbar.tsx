@@ -29,7 +29,9 @@ export default function Navbar() {
                                 : 'no-underline'}>SKILLS</Link>
                             </li>
                             <li className="hover:underline hover:underline-offset-4 hover:decoration-1">
-                                <Link href="/">DANIELLE</Link>
+                                <Link href="/me" className={currentRoute === '/me'
+                                ? 'underline underline-offset-4'
+                                : 'no-underline'}>DANIELLE</Link>
                             </li>
                             <li className="hover:underline hover:underline-offset-4 hover:decoration-1">
                                 <Link href="/history" className={currentRoute === '/history'
@@ -37,7 +39,9 @@ export default function Navbar() {
                                 : 'no-underline'}>HISTORY</Link>
                             </li>
                             <li className="hover:underline hover:underline-offset-4 hover:decoration-1">
-                                <Link href="/">CONTACT</Link>
+                                <Link href="/contact" className={currentRoute === '/contact'
+                                ? 'underline underline-offset-4'
+                                : 'no-underline'}>CONTACT</Link>
                             </li>
                         </ul>
                     </div>
