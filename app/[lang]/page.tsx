@@ -7,6 +7,8 @@ interface Project {
   title: string;
   title_fr: string;
   video: string;
+  code: string;
+  tech: string;
 }
 
 async function getData() {
@@ -42,7 +44,7 @@ export default async function () {
       <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center'>
 
         {projectsList.map((project, index) => (
-          <a href="/project">
+          <a href={`/${project._id}`}>
             <div 
             key={index}
             className='relative w-full h-64 rounded bg-cover hover:scale-105 hover:shadow-xl duration-300' 
