@@ -10,6 +10,9 @@ interface DictionaryEntry {
   contactMessage: string;
   contactButton: string;
   contactEmailSent: string;
+  slugIntro: string;
+  slugTech: string;
+  slugCode: string;
 }
 
 interface history {
@@ -102,10 +105,13 @@ export const dictionary: Record<string, DictionaryEntry> = {
     contactMessage: 'Message',
     contactButton: 'Send',
     contactEmailSent: 'Email Sent Successfully !',
+    slugIntro: 'Check The Video Demo',
+    slugTech: 'Project Stack :',
+    slugCode: `Project's Code`,
   },
   fr: {
     homeHeader: `DÉVELOPPEUSE FULL-STACK`,
-    historyHeaderWork: `Expérience professionnelle`,
+    historyHeaderWork: `Expérience Professionnelle`,
     historyHeaderStudy: `Études`,
     historyContentWork: [
       {
@@ -186,5 +192,8 @@ export const dictionary: Record<string, DictionaryEntry> = {
     contactMessage: 'Message',
     contactButton: 'Envoyer',
     contactEmailSent: 'E-mail Envoyé Avec Succès !',
+    slugIntro: 'Regardez La Démo Vidéo',
+    slugTech: 'Stack Du Projet :',
+    slugCode: `Le Code Du Projet`,
   }
 }

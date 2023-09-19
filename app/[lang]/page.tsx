@@ -9,6 +9,7 @@ interface Project {
   video: string;
   code: string;
   tech: string;
+  projectId: string;
 }
 
 async function getData() {
@@ -22,7 +23,7 @@ async function getData() {
       .db('PortfolioDb')
       .collection<Project>('Projects')
       .find({}, {projection: {
-        _id: false
+        // _id: false
       }})
       .toArray();
 
@@ -43,10 +44,10 @@ export default async function () {
   return (
       <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center'>
 
-        {projectsList.map((project, index) => (
-          <a href={`/${project._id}`}>
+        {projectsList.reverse().map((project) => (
+          <a href={`/projects/${project.projectId}`}>
             <div 
-            key={index}
+            key={project.projectId}
             className='relative w-full h-64 rounded bg-cover hover:scale-105 hover:shadow-xl duration-300' 
             style={{ backgroundImage: `url(${project.image})` }}
             >
