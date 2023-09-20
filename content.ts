@@ -194,6 +194,6 @@ export const dictionary: Record<string, DictionaryEntry> = {
     contactEmailSent: 'E-mail Envoyé Avec Succès !',
     slugIntro: 'Regardez La Démo Vidéo',
     slugTech: 'Stack Du Projet :',
-    slugCode: `Le Code Du Projet`,
+    slugCode: `Code Du Projet`,
   }
 }
