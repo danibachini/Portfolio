@@ -23,7 +23,6 @@ async function getData() {
       .db('PortfolioDb')
       .collection<Project>('Projects')
       .find({}, {projection: {
-        // _id: false
       }})
       .toArray();
 

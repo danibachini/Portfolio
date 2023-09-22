@@ -28,7 +28,6 @@ export default function Arrows({
         return 
     }
 
-    
     return (
         <div className="flex justify-between">
             {/* previous */}

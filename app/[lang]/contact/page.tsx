@@ -2,6 +2,7 @@
 
 import { dictionary } from '@/content';
 import { useState } from 'react';
+import SecuritySlider from "@/components/EnableSlider";
 
 export default function ({ params }: { params: { lang: string } }) {
 
@@ -10,6 +11,8 @@ export default function ({ params }: { params: { lang: string } }) {
     const [email, setEmail] = useState('');
     const [text, setText] = useState('');
     const [submitted, setSubmit] = useState(false);
+    const [isSliderActive, setIsSliderActive] = useState(false);
+
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -39,6 +42,8 @@ export default function ({ params }: { params: { lang: string } }) {
             }
         }
     }
+
+
 
     return(
         <main className='grid grid-cols-1 '>
@@ -84,16 +89,22 @@ export default function ({ params }: { params: { lang: string } }) {
                     </label>
                 </div>
 
+
                 <div className='text-center'>
+
+                    <SecuritySlider onToggle={(isActive) => setIsSliderActive(isActive)} />
+
+                    
                     {submitted ? (
                         <p>{dictionary[params.lang]?.contactEmailSent}</p>
                     ) : (
                         <div className="form-control grid grid-cols-1 justify-items-center mt-5">
                             {isLoading ? (
-                                <span className="loading loading-spinner loading-xs text-black"></span>
+                                <span className="loading loading-spinner loading-xs text-black"/>
                             ) : (
                                 <button
                                 type="submit"
+                                disabled={!isSliderActive}
                                 className="btn bg-black rounded-none text-slate-100 hover:bg-slate-50 
                                 border hover:border-black hover:text-black font-light btn-sm ">
                                 {dictionary[params.lang]?.contactButton}
