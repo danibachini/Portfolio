@@ -15,7 +15,7 @@ interface Project {
     projectId: string;
 }
 
-export async function getData ( params: string ) {
+async function getData ( params: string ) {
 
     const driver: string = process.env.MONGODB_URI as string;
     const client: MongoClient = new MongoClient(driver);
@@ -41,7 +41,7 @@ export async function getData ( params: string ) {
     }
 }
 
-export async function getAll() {
+async function getAll() {
 
     const driver: string = process.env.MONGODB_URI as string;
     const client: MongoClient = new MongoClient(driver);

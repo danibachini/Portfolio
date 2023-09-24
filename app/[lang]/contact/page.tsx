@@ -4,7 +4,7 @@ import { dictionary } from '@/content';
 import { useState } from 'react';
 import SecuritySlider from "@/components/EnableSlider";
 
-export default function ({ params }: { params: { lang: string } }) {
+export default function Contact ({ params }: { params: { lang: string } }) {
 
     const [isLoading, setIsLoading] = useState(false);
     const [name, setName] = useState('');

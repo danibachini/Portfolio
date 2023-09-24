@@ -1,7 +1,7 @@
 
 import { dictionary } from '@/content';
 
-export default async function ({ params }: { params: { lang: string } }) {
+export default async function  history ({ params }: { params: { lang: string } }) {
     return (
         <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 '>
             <div className='rounded shadow-md'>

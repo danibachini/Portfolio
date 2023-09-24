@@ -39,15 +39,15 @@ async function getData() {
   }
 }
 
-export default async function () {
+export default async function Page() {
   const projectsList: Project[]  = await getData() as Project[];
 
   return (
     <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center'>
       {projectsList.reverse().map((project) => (
-        <a href={`/projects/${project.projectId}`}>
+        <a href={`/projects/${project.projectId}`} key={project.projectId}>
           <div 
-          key={project.projectId}
+          
           className='relative w-full h-64 rounded bg-cover bg-center hover:scale-105 hover:shadow-xl duration-300' 
           style={{ backgroundImage: `url(${project.image})` }}
           >
