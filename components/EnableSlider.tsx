@@ -2,11 +2,19 @@
 
 import { useState } from "react";
 
-export default function SecuritySlider({ onToggle }: { onToggle: (isActive: boolean) => void }) {
+export default function SecuritySlider({ 
+    onToggle,
+    params,
+}: { 
+    onToggle: (isActive: boolean) => void ,
+    params: { lang: string },
+}) {
     
     const [active, setActive] = useState(false);
 
     const animateToggle = () => {
+        console.log(params);
+        
         setActive(!active);
         onToggle(!active);
     };
@@ -42,7 +50,11 @@ export default function SecuritySlider({ onToggle }: { onToggle: (isActive: bool
                 </div>
                 
                 <div className="relative text-center m-auto">
-                    <p>Click On The Square</p>
+                    {params.lang === 'fr' ? (
+                        <p>Cliquez Sur Le Cadenas</p> 
+                    ):(
+                        <p>Click On The Padlock</p>
+                    )}
                 </div>
             </div>
         </div>

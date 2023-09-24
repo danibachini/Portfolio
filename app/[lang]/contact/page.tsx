@@ -18,7 +18,7 @@ export default function ({ params }: { params: { lang: string } }) {
         e.preventDefault();
         setIsLoading(true); 
         
-        if (name !== '' && email !== '' && text !== '') {
+        if (name !== '' && email !== '' && text !== '' && isSliderActive === true) {
 
             setSubmit(true);
             const response = await fetch("/api/contact", {
@@ -30,6 +30,7 @@ export default function ({ params }: { params: { lang: string } }) {
                   name,
                   email,
                   text,
+                  isSliderActive,
                 }),
             });
 
@@ -38,12 +39,11 @@ export default function ({ params }: { params: { lang: string } }) {
                 setName('');
                 setEmail('');
                 setText('');
+                setIsSliderActive(false);
                 setIsLoading(false);
             }
         }
     }
-
-
 
     return(
         <main className='grid grid-cols-1 '>
@@ -92,8 +92,7 @@ export default function ({ params }: { params: { lang: string } }) {
 
                 <div className='text-center'>
 
-                    <SecuritySlider onToggle={(isActive) => setIsSliderActive(isActive)} />
-
+                    <SecuritySlider onToggle={(isActive) => setIsSliderActive(isActive)} params={params}/>
                     
                     {submitted ? (
                         <p>{dictionary[params.lang]?.contactEmailSent}</p>

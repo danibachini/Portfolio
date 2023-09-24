@@ -6,7 +6,7 @@ export async function POST (req : Request) {
 
     const body = await req.json();
 
-    if (body.name && body.email && body.text) {
+    if (body.name && body.email && body.text && body.isSliderActive === true ) {
 
         const email = process.env.EMAIL;
         const pass = process.env.EMAIL_PASS;
