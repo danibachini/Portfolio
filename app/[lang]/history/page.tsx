@@ -1,4 +1,5 @@
 
+import type { Metadata } from 'next'
 import { dictionary } from '@/content';
 
 export default async function  history ({ params }: { params: { lang: string } }) {
@@ -30,4 +31,8 @@ export default async function  history ({ params }: { params: { lang: string } }
             </div>
         </main>
     )
+}
+
+export const metadata: Metadata = {
+  title: 'History',
 }

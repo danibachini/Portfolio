@@ -26,6 +26,7 @@ export default function RootLayout({
       
         <head>
           <link rel="icon" href="/favicon.png" sizes="any" />
+          <meta name="robots" content="noindex" />
         </head>
 
         <body className={inter.className} suppressHydrationWarning={true}> 
@@ -33,7 +34,9 @@ export default function RootLayout({
           
           <div className='flex flex-col px-6 md:max-w-5xl my-4 mx-auto'>
             <div className='flex justify-between'>
-              <h1 className='mx-2'>DANIELLE BACHINI.</h1>
+              <a href="/">
+                <h1 className='mx-2'>DANIELLE BACHINI.</h1>
+              </a>
               <div className='flex'>
                 <Link href="https://github.com/danibachini" target="_blank">
                   <Image src="/github.png" alt="Github's icon" width="25" height="25" className="cursor-pointer mx-2 hover:scale-110 duration-300"/>

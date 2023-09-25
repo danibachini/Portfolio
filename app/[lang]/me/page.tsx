@@ -1,4 +1,6 @@
 
+import type { Metadata } from 'next'
+
 export default function me ({ params }: { params: { lang: string } }) {
     return (
         <main className='grid grid-cols-1 '>
@@ -27,4 +29,8 @@ export default function me ({ params }: { params: { lang: string } }) {
             </div>
         </main>
     )
+}
+
+export const metadata: Metadata = {
+  title: 'About Me',
 }

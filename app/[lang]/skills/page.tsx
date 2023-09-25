@@ -1,4 +1,5 @@
 
+import type { Metadata } from 'next'
 import Image from "next/image";
 
 interface logos {
@@ -104,4 +105,8 @@ export default function skills() {
             
         </main>
     )
+}
+ 
+export const metadata: Metadata = {
+  title: 'Skills',
 }

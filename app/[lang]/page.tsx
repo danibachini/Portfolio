@@ -1,4 +1,5 @@
 
+import type { Metadata } from 'next'
 import { MongoClient, ObjectId } from 'mongodb';
 
 interface Project {
@@ -60,4 +61,9 @@ export default async function Page() {
       ))}
     </main>
   )
+}
+ 
+export const metadata: Metadata = {
+  title: 'Dani Bachini | Portfolio',
+  description: `Danielle Bachini's Full-stack Web Developer Portfolio`,
 }

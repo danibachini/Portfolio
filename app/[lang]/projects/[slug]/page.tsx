@@ -1,4 +1,5 @@
 
+import type { Metadata } from 'next'
 import { dictionary } from "@/content";
 import { MongoClient, ObjectId } from "mongodb";
 import Link from "next/link";
@@ -116,4 +117,8 @@ export default async function Page({ params }: { params: { slug: string, lang: s
             </main>
         </>
     )
+}
+
+export const metadata: Metadata = {
+  title: 'Project',
 }
