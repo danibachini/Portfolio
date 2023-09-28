@@ -13,7 +13,7 @@ interface Project {
   projectId: string;
 }
 
-async function getData() {
+async function getData(): Promise<Project[]> {
   const driver: string = process.env.MONGODB_URI ?? '';
   const client: MongoClient = new MongoClient(driver);
 
@@ -30,10 +30,10 @@ async function getData() {
       }})
       .toArray();
 
-    return projects
+    return projects;
 
   } catch (error) {
-    return (error)
+    return (error) as any;
 
   } finally {
     client.close();
@@ -41,7 +41,7 @@ async function getData() {
 }
 
 export default async function Page() {
-  const projectsList: Project[]  = await getData() as Project[];
+  const projectsList: Project[]  = await getData();
 
   return (
     <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center'>
