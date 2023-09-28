@@ -5,7 +5,7 @@ import { match } from '@formatjs/intl-localematcher';
 var Negotiator = require('negotiator');
 let locales = ['fr', 'en'];
 
-export let defaultLocale = 'fr';
+export let defaultLocale = 'en';
 
 function getLocale(request: Request): string {
 
