@@ -21,25 +21,53 @@ export async function POST (req : Request) {
                 pass,
             }
         });
-    
+
         const mailOptions = {
-            from: body.email,
-            to: email,
-            subject: 'Contact Via Portfolio',
-            text: 'Name: ' + body.name + '\nEmail: ' + body.email + '\nMessage: ' + body.text
+        from: body.email,
+        to: email,
+        subject: 'Contact Via Portfolio',
+        text: 'Name: ' + body.name + '\nEmail: ' + body.email + '\nMessage: ' + body.text
         }
+
+        try {
+            // Use async/await to send the email
+            const info = await transporter.sendMail(mailOptions);
+            console.log("Email sent: " + info.response);
+      
+            // Return a successful response
+            return new Response(JSON.stringify({ message: "Success" }), {
+              status: 200,
+              headers: { "Content-Type": "application/json" },
+            });
+          } catch (error) {
+            console.error(error);
+      
+            // Return an error response
+            return new Response(JSON.stringify({ error: "Email not sent" }), {
+              status: 500,
+              headers: { "Content-Type": "application/json" },
+            });
+          }
+        } else {
+          // Return an error response
+          return new Response(JSON.stringify({ error: "Invalid request data" }), {
+            status: 400,
+            headers: { "Content-Type": "application/json" },
+          });
+        }
+
     
-        transporter.sendMail(mailOptions, function(error: any , info: any) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log('Email sent: ' + info.response);
-            }
-        })
+    //     transporter.sendMail(mailOptions, function(error: any , info: any) {
+    //         if (error) {
+    //             console.log(error);
+    //         } else {
+    //             console.log('Email sent: ' + info.response);
+    //         }
+    //     })
     
-        return NextResponse.json ({message: 'Success'})
+    //     return NextResponse.json ({message: 'Success'})
         
-    } else {
-        return (error)
-    }
+    // } else {
+    //     return (error)
+    // }
 }
