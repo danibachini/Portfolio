@@ -13,4 +13,4 @@ Portfolio to display my projects, skills, and to be contacted for job opportunit
 - Next.js 13 (Typescript and React)
 - Tailwind CSS
 - MongoDB Atlas
-- AWS (S3 and Lambda)
+- AWS (Amplify)
