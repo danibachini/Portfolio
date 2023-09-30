@@ -2,15 +2,8 @@
 const nextConfig = {}
 
 module.exports = {
-  env: {
-    MONGODB_URI: process.env.MONGODB_URI,
-    EMAIL: process.env.EMAIL,
-    EMAIL_PASS: process.env.EMAIL_PASS,
-
-  },
 
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
