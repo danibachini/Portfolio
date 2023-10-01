@@ -1,4 +1,5 @@
 
+import type { Metadata } from 'next'
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary'
 import Form from '../components/ContactForm';
@@ -13,4 +14,8 @@ export default async function Contact ({ params: { lang } }: { params: { lang: L
             <Form params={{ page: page, currentLang: currentLang }}  />
         </main>
     )
+}
+
+export const metadata: Metadata = {
+    title: 'Contact',
 }

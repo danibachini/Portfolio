@@ -7,10 +7,11 @@ Portfolio to display my projects, skills, and to be contacted for job opportunit
 ### Features:
 - Contact Form
 - Responsive Mobile
-- Internationalization (English and French)
+- Internationalization / i18n (English and French)
 
 ### Technologies:
 - Next.js 13 (Typescript and React)
 - Tailwind CSS
 - MongoDB Atlas
-- AWS (Amplify)
+- Vercel (hosting)
+- AWS S3 (projects' images storing)

@@ -1,13 +1,11 @@
 
 import type { Metadata } from 'next'
-// import { dictionary } from '@/content';
-import { Locale } from '@/i18n.config'
-import { getDictionary } from '@/lib/dictionary'
+import { Locale } from '@/i18n.config';
+import { getDictionary } from '@/lib/dictionary';
 
 export default async function  history ({ params: { lang } }: { params: { lang: Locale } }) {
 
-    const { page } = await getDictionary(lang)
-    // console.log('this is page in history', page);
+    const { page } = await getDictionary(lang);
 
     return (
         <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 '>

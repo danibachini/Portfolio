@@ -5,8 +5,6 @@ import { useState } from 'react';
 import SecuritySlider from "@/app/[lang]/components/EnableSlider";
 
 export default function Form ({ params }: { params: {page: any, currentLang: string} }) {
-
-    console.log('this is the params in the contact component:', params);
     
     const [isLoading, setIsLoading] = useState(false);
     const [name, setName] = useState('');

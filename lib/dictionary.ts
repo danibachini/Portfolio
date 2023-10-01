@@ -8,6 +8,3 @@ const dictionaries = {
 }
 
 export const getDictionary = async (locale: Locale) => dictionaries[locale]()
-
-// export const getDictionary = async (locale: Locale) =>
-//   dictionaries[locale]?.() ?? dictionaries.en()

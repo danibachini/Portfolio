@@ -1,11 +1,10 @@
 
 import type { Metadata } from 'next'
-// import { dictionary } from "@/content";
 import { MongoClient, ObjectId } from "mongodb";
 import Link from "next/link";
 import Arrows from "@/app/[lang]/components/Arrows";
 import { Locale } from '@/i18n.config';
-import { getDictionary } from '@/lib/dictionary'
+import { getDictionary } from '@/lib/dictionary';
 
 interface Project {
     _id: ObjectId;

@@ -28,9 +28,10 @@ export default function skills() {
         {image: '/mysql.png', brand: 'MySQL'},
         {image: '/sqlite.png', brand: 'SQLite'},
     ];
-    const version:logos[] = [
+    const devops:logos[] = [
         {image: '/github.png', brand: 'Github'}, 
-        {image: '/git.png', brand: 'Git'}
+        {image: '/git.png', brand: 'Git'},
+        {image: '/vercel.svg', brand: 'Vercel'}
     ];
 
     return (
@@ -87,9 +88,9 @@ export default function skills() {
             </div>
 
             <div className="rounded shadow-md">
-                <h1 className='text-center font-thin py-4'>Versioning</h1>
+                <h1 className='text-center font-thin py-4'>DevOps</h1>
                 <div className='m-6 flex flex-wrap justify-center gap-10'>
-                    {version.map((logo, index) => (
+                    {devops.map((logo, index) => (
                         <div className='tooltip tooltip-primary' key={index} data-tip={logo.brand}>
                             <Image
                             src={logo.image} 
