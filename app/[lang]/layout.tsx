@@ -1,11 +1,13 @@
 import '../globals.css'
 import { ReactNode } from 'react';
 import { Inter } from 'next/font/google';
-import { defaultLocale } from '@/middleware';
-import { dictionary } from '@/content';
+// import { defaultLocale } from '@/middleware';
+// import { dictionary } from '@/content';
 import Link from 'next/link';
 import Image from 'next/image';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/app/[lang]/components/Navbar';
+import { Locale } from '@/i18n.config';
+import { getDictionary } from '@/lib/dictionary'
 
 
 const inter = Inter({
@@ -13,16 +15,19 @@ const inter = Inter({
   display: 'swap',
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params,
+  params: { lang },
 }: {
   children: ReactNode;
-  params: { lang: string };
+  params: { lang: Locale };
 }) {
+
+  const { page } = await getDictionary(lang)
+
   return (
     <>
-      <html lang={params.lang ?? defaultLocale} className='bg-white'>
+      <html lang={ lang } className='bg-white'>
       
         <head>
           <link rel="icon" href="/favicon.png" sizes="any" />
@@ -50,7 +55,7 @@ export default function RootLayout({
 
           <div className='bg-neutral-100 py-10 items-center'>
             <div className='md:max-w-5xl flex flex-col mx-auto px-6 fill'>
-              <h1 className='mx-2 text-lg'>{dictionary[params.lang]?.homeHeader}</h1>
+              <h1 className='mx-2 text-lg'>{page.homeHeader}</h1>
             </div>
           </div> 
 

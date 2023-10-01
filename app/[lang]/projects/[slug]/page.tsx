@@ -1,9 +1,11 @@
 
 import type { Metadata } from 'next'
-import { dictionary } from "@/content";
+// import { dictionary } from "@/content";
 import { MongoClient, ObjectId } from "mongodb";
 import Link from "next/link";
-import Arrows from "@/components/Arrows";
+import Arrows from "@/app/[lang]/components/Arrows";
+import { Locale } from '@/i18n.config';
+import { getDictionary } from '@/lib/dictionary'
 
 interface Project {
     _id: ObjectId;
@@ -75,11 +77,12 @@ async function getAll() {
     }
 }
 
-export default async function Page({ params }: { params: { slug: string, lang: string } }) {
+export default async function Page({ params: { lang, slug } } : { params: { slug: string, lang: Locale } }) {
 
-    const project: Project= await getData(params.slug) as Project;
+    const { page } = await getDictionary(lang)
+    const project: Project= await getData(slug) as Project;
     const allProjects: string[] = await getAll() as string[];
-    const actualProject: number = allProjects.indexOf(params.slug);
+    const actualProject: number = allProjects.indexOf(slug);
 
     return (
         <>
@@ -100,13 +103,13 @@ export default async function Page({ params }: { params: { slug: string, lang: s
                     </div>
 
                     <div className="text-center">
-                        <p className="font-light">{dictionary[params.lang]?.slugTech} {project.tech}</p>
+                        <p className="font-light">{page.slugTech} {project.tech}</p>
                         <Link href={project.code} target="_blank">
                             <button
                             type="button"
                             className="btn bg-black rounded-none text-slate-100 hover:bg-slate-50 
                             border hover:border-black hover:text-black font-light btn-sm my-8 justify-self-center">
-                            {dictionary[params.lang]?.slugCode}
+                            {page.slugCode}
                             </button>
                         </Link>
                     </div>

@@ -1,11 +1,12 @@
 
+import { Locale } from '@/i18n.config'
 import type { Metadata } from 'next'
 
-export default function me ({ params }: { params: { lang: string } }) {
+export default async function me ({ params: { lang } }: { params: { lang: Locale } }) {    
     return (
         <main className='grid grid-cols-1 '>
             <div className="rounded shadow-md p-6">
-                {params.lang === 'fr' ? (
+                {lang === 'fr' ? (
                     <div className="my-8 md:my-12">
                         <iframe
                         className="h-72 min-w-full sm:h-96"

@@ -7,14 +7,12 @@ export default function SecuritySlider({
     params,
 }: { 
     onToggle: (isActive: boolean) => void ,
-    params: { lang: string },
+    params: string,
 }) {
     
     const [active, setActive] = useState(false);
 
     const animateToggle = () => {
-        console.log(params);
-        
         setActive(!active);
         onToggle(!active);
     };
@@ -50,7 +48,7 @@ export default function SecuritySlider({
                 </div>
                 
                 <div className="relative text-center m-auto">
-                    {params.lang === 'fr' ? (
+                    {params === 'fr' ? (
                         <p>Cliquez Sur Le Cadenas</p> 
                     ):(
                         <p>Click On The Padlock</p>
