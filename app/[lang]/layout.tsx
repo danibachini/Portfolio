@@ -60,7 +60,7 @@ export default async function RootLayout({
 
           <Navbar/>
 
-          <div className='min-h-screen md:max-w-5xl mx-auto px-6 '>
+          <div className='min-h-fit md:max-w-5xl mx-auto px-6 '>
             {children}
           </div>
 

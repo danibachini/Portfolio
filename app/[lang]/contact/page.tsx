@@ -10,12 +10,12 @@ export default async function Contact ({ params: { lang } }: { params: { lang: L
     const currentLang: string = lang;
 
     return(
-        <main className='grid grid-cols-1 '>
+        <main className='grid grid-cols-1 mb-10'>
             <Form params={{ page: page, currentLang: currentLang }}  />
         </main>
     )
 }
 
 export const metadata: Metadata = {
-    title: 'Contact',
+    title: 'Dani Bachini | Contact',
 }

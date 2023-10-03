@@ -44,7 +44,7 @@ export default async function Page() {
   const projectsList: Project[]  = await getData();
 
   return (
-    <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center'>
+    <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center mb-10'>
       {projectsList.reverse().map((project) => (
         <a href={`/projects/${project.projectId}`} key={project.projectId}>
           <div 

@@ -85,7 +85,7 @@ export default async function Page({ params: { lang, slug } } : { params: { slug
 
     return (
         <>
-            <main className='grid grid-cols-1 '>
+            <main className='grid grid-cols-1 mb-10'>
                 <div className="rounded shadow-md p-6">
                     <h1 className='px-4 pt-2 text-2xl text-center'>{project.title}</h1>
                     <h1 className='px-4 pb-2 text-base text-center'>{project.title_fr}</h1>
@@ -122,5 +122,5 @@ export default async function Page({ params: { lang, slug } } : { params: { slug
 }
 
 export const metadata: Metadata = {
-  title: 'Project',
+  title: 'Dani Bachini | Project',
 }

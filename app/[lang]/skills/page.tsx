@@ -35,7 +35,7 @@ export default function skills() {
     ];
 
     return (
-        <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 '>
+        <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 mb-10'>
             <div className='rounded shadow-md'>
                 <h1 className='text-center font-thin py-4'>Frontend</h1>
                 <div className='m-6 flex flex-wrap justify-center gap-10'>
@@ -109,5 +109,5 @@ export default function skills() {
 }
  
 export const metadata: Metadata = {
-  title: 'Skills',
+  title: 'Dani Bachini | Skills',
 }

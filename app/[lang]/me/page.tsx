@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 export default async function me ({ params: { lang } }: { params: { lang: Locale } }) {    
     return (
-        <main className='grid grid-cols-1 '>
+        <main className='grid grid-cols-1 mb-10'>
             <div className="rounded shadow-md p-6">
                 {lang === 'fr' ? (
                     <div className="my-8 md:my-12">
@@ -33,5 +33,5 @@ export default async function me ({ params: { lang } }: { params: { lang: Locale
 }
 
 export const metadata: Metadata = {
-  title: 'About Me',
+  title: 'Dani Bachini | About Me',
 }

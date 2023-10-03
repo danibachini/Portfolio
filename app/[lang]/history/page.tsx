@@ -8,7 +8,7 @@ export default async function  history ({ params: { lang } }: { params: { lang: 
     const { page } = await getDictionary(lang);
 
     return (
-        <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 '>
+        <main className='grid gap-6 grid-cols-1 sm:grid-cols-2 mb-10'>
             <div className='rounded shadow-md'>
                 <h2 className='text-center font-thin py-4'>{page.historyHeaderWork}</h2>
                 <div className='m-6 justify-start gap-10'>
@@ -38,5 +38,5 @@ export default async function  history ({ params: { lang } }: { params: { lang: 
 }
 
 export const metadata: Metadata = {
-  title: 'History',
+  title: 'Dani Bachini | History',
 }

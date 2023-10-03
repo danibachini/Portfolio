@@ -20,7 +20,6 @@ export default function Form ({ params }: { params: {page: any, currentLang: str
         
         if (name !== '' && email !== '' && text !== '' && isSliderActive === true) {
 
-            setSubmit(true);
             const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {
@@ -41,6 +40,7 @@ export default function Form ({ params }: { params: {page: any, currentLang: str
                 setText('');
                 setIsSliderActive(false);
                 setIsLoading(false);
+                setSubmit(true);
             }
         }
     }

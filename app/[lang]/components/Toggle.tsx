@@ -29,7 +29,7 @@ export default function Toggle() {
                         <ul className="flex flex-wrap gap-4 justify-center text-sm">
                             <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className={pathname === '/'
+                                className={pathname === '/en'|| pathname === '/fr'
                                 ? 'underline underline-offset-4'
                                 : 'no-underline'} 
                                 href="/">PROJECTS</Link>
@@ -37,7 +37,7 @@ export default function Toggle() {
 
                             <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className={pathname === '/skills'
+                                className={pathname === '/en/skills'|| pathname === '/fr/skills'
                                 ? 'underline underline-offset-4'
                                 : 'no-underline'}
                                 href="/skills">SKILLS</Link>
@@ -45,7 +45,7 @@ export default function Toggle() {
                             
                             <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className={pathname === '/me'
+                                className={pathname === '/en/me'|| pathname === '/fr/me'
                                 ? 'underline underline-offset-4'
                                 : 'no-underline'}
                                 href="/me">DANIELLE</Link>
@@ -53,7 +53,7 @@ export default function Toggle() {
 
                             <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className={pathname === '/history'
+                                className={pathname === '/en/history'|| pathname === '/fr/history'
                                 ? 'underline underline-offset-4'
                                 : 'no-underline'}
                                 href="/history">HISTORY</Link>
@@ -61,7 +61,7 @@ export default function Toggle() {
                             
                             <li className="m-2">
                                 <Link onClick={() => setNavbar(!navbar)} 
-                                className={pathname === '/contact'
+                                className={pathname === '/en/contact'|| pathname === '/fr/contact'
                                 ? 'underline underline-offset-4'
                                 : 'no-underline'}
                                 href="/contact">CONTACT</Link>
