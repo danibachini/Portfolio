@@ -10,7 +10,7 @@ export default async function me ({ params: { lang } }: { params: { lang: Locale
                     <div className="my-8 md:my-12">
                         <iframe
                         className="h-72 min-w-full sm:h-96"
-                        src={`https://www.youtube.com/embed/tVReoTUKQvU?si=bYs9hVUK4dI2715H`}
+                        src={`https://www.youtube.com/embed/oQiAopXKKe4?si=Ky9QGcdw3qw9pXZ8`}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                         title="Embedded Youtube Video"
@@ -20,7 +20,7 @@ export default async function me ({ params: { lang } }: { params: { lang: Locale
                     <div className="my-8 md:my-12">
                         <iframe
                         className="h-72 min-w-full sm:h-96"
-                        src={`https://www.youtube.com/embed/6ZSY3C6dDlo?si=nEb8xVL6WFTWQwku`}
+                        src={`https://www.youtube.com/embed/QrQFIYEEdDM?si=indyBAxp4tJi247D`}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                         title="Embedded Youtube Video"
