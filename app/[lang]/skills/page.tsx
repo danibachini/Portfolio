@@ -22,11 +22,13 @@ export default function skills() {
     const back:logos[] = [
         {image: '/nodejs.png', brand: 'Node.js'},
         {image: '/python.jpeg', brand: 'Python'},
+        {image: '/vitest.png', brand: 'Vitest'},
     ];
     const database:logos[] = [
         {image: '/mongodb.svg', brand: 'MongoDB'},
         {image: '/mysql.png', brand: 'MySQL'},
         {image: '/sqlite.png', brand: 'SQLite'},
+        {image: '/prisma.png', brand: 'Prisma'},
     ];
     const devops:logos[] = [
         {image: '/github.png', brand: 'Github'}, 
